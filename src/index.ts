@@ -12,6 +12,7 @@ lbl1.fontSize = 16;
 lbl1.move(10,20);
 
 let btn = new Button(w);
+btn.backcolor = "#0000ff"
 btn.tabindex = 2;
 btn.fontSize = 14
 btn.move(12, 50)

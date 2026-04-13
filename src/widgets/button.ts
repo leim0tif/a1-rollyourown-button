@@ -78,6 +78,7 @@ class Button extends Widget{
     }
     
     pressReleaseState(): void{
+        this._rect.fill("blue");
 
         if (this.previousState instanceof PressedWidgetState)
             this.raise(new EventArgs(this));
@@ -90,28 +91,28 @@ class Button extends Widget{
     //TODO: give the states something to do! Use these methods to control the visual appearance of your
     //widget
     idleupState(): void {
-        throw new Error("Method not implemented.");
+        this._text.fill("black");
     }
     idledownState(): void {
-        throw new Error("Method not implemented.");
+        this._rect.fill("green");
     }
     pressedState(): void {
-        throw new Error("Method not implemented.");
+        this._rect.fill("green");
     }
     hoverState(): void {
-        throw new Error("Method not implemented.");
+        this._text.fill("white");
     }
     hoverPressedState(): void {
-        throw new Error("Method not implemented.");
+        this._rect.fill("black");
     }
     pressedoutState(): void {
-        throw new Error("Method not implemented.");
+        this._rect.fill("blue");
     }
     moveState(): void {
         throw new Error("Method not implemented.");
     }
     keyupState(keyEvent?: KeyboardEvent): void {
-        throw new Error("Method not implemented.");
+        this._rect.fill("blue");
     }
 }
 
