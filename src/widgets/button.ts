@@ -85,7 +85,10 @@ class Button extends Widget{
     }
 
     //TODO: implement the onClick event using a callback passed as a parameter
-    onClick(/*TODO: add callback parameter*/):void{}
+    
+    onClick(callback: (event: EventArgs) => void):void{
+        this.attach(callback);
+    }
 
     
     //TODO: give the states something to do! Use these methods to control the visual appearance of your
@@ -94,9 +97,10 @@ class Button extends Widget{
         this._text.fill("black");
     }
     idledownState(): void {
-        this._rect.fill("green");
+        throw new Error("Method not implemented.");
     }
     pressedState(): void {
+        
         this._rect.fill("green");
     }
     hoverState(): void {
@@ -114,6 +118,25 @@ class Button extends Widget{
     keyupState(keyEvent?: KeyboardEvent): void {
         this._rect.fill("blue");
     }
+
+    public get text() {
+        return this._text
+    }
+
+    public set text(new_text: Text) {
+        this._text = new_text
+    }
+
+    public get size() {
+        return Array(this.height, this.width);
+    }
+
+    public set size(new_size: number[]) {
+        this.height = new_size[0];
+        this.width = new_size[1];
+    }
+
+
 }
 
 export {Button}
