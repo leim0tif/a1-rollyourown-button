@@ -108,7 +108,7 @@ class Button extends Widget{
 
     }
     hoverState(): void {
-        this._rect.fill("#2C497F")
+        this._rect.fill("#42629d")
         this._text.fill("white");
     }
     hoverPressedState(): void {

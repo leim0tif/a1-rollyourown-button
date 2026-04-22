@@ -11,10 +11,12 @@ class CheckBox extends Widget{
     private _fontSize: number;
     private _text_y: number;
     private _text_x: number;
-    private defaultText: string= "Button";
+    private defaultText: string= "CheckBox";
     private defaultFontSize: number = 18;
-    private defaultWidth: number = 80;
-    private defaultHeight: number = 30;
+    private defaultWidth: number = 15;
+    private defaultHeight: number = 15;
+
+    private _checked: boolean = false;
 
     constructor(parent:Window){
         super(parent);
@@ -42,11 +44,11 @@ class CheckBox extends Widget{
         let box:Box = this._text.bbox();
         // in TS, the prepending with + performs a type conversion from string to number
         this._text_y = (+this._rect.y() + ((+this._rect.height()/2)) - (box.height/2));
-        this._text.x(+this._rect.x() + 4);
+        this._text.x(+this._rect.x() + 20);
         if (this._text_y > 0){
             this._text.y(this._text_y);
         }
-        this._text.fill("white");
+        this._text.fill("black");
     }
     
     render(): void {
@@ -79,8 +81,12 @@ class CheckBox extends Widget{
     }
     
     pressReleaseState(): void{
-        this._text.fill("white");
-        this._rect.fill("#3D2B56");
+        if (this._checked) {
+            this._rect.fill("#80acff");
+        } 
+        else { 
+            this._rect.fill("white");
+        }
 
         if (this.previousState instanceof PressedWidgetState)
             this.raise(new EventArgs(this));
@@ -96,32 +102,29 @@ class CheckBox extends Widget{
     //TODO: give the states something to do! Use these methods to control the visual appearance of your
     //widget
     idleupState(): void {
-        this._rect.fill("#3D2B56");
-        this._text.fill("white");
+        throw new Error("Method not implemented.");
     }
     idledownState(): void {
         throw new Error("Method not implemented.");
     }
     pressedState(): void {
-        this._text.fill("black");
-        this._rect.fill("#CCF5AC");
-
+        this._checked = !this._checked;
+        throw new Error("Method not implemented.");
     }
     hoverState(): void {
-        this._rect.fill("#2C497F")
-        this._text.fill("white");
+        this._rect.fill("#d7dce7");
     }
     hoverPressedState(): void {
-        this._rect.fill("#3D2B56");
+        throw new Error("Method not implemented.");
     }
     pressedoutState(): void {
-        this._rect.fill("white");
+        throw new Error("Method not implemented.");
     }
     moveState(): void {
         throw new Error("Method not implemented.");
     }
     keyupState(keyEvent?: KeyboardEvent): void {
-        this._rect.fill("#3D2B56");
+        throw new Error("Method not implemented.");
     }
 
     public get text() {
@@ -132,16 +135,6 @@ class CheckBox extends Widget{
         this._input = text;
         this.update();
     }
-
-    public get size() {
-        return Array(this.height, this.width);
-    }
-
-    public set size(new_size: number[]) {
-        this.height = new_size[0];
-        this.width = new_size[1];
-    }
-
 
 }
 
