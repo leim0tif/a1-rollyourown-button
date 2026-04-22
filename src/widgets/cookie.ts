@@ -4,7 +4,7 @@ import {Window, Widget, RoleType, EventArgs} from "../core/ui";
 // importing code from SVG.js library
 import {Rect, Text, Box} from "../core/ui";
 
-class Button extends Widget{
+class CheckBox extends Widget{
     private _rect: Rect;
     private _text: Text;
     private _input: string;
@@ -145,4 +145,4 @@ class Button extends Widget{
 
 }
 
-export {Button}
+export {CheckBox}

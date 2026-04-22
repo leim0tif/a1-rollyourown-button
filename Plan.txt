@@ -1,0 +1,16 @@
+DIGITAL BURRITO MAKER
+
+Choose Meat
+(radio button)
+
+Choose Toppings
+(checkboxes)
+
+Construct
+(button)
+
+Sandwich In Progress
+(progress bar)
+
+Edible Burrito
+(custom widget, animated sprite that progresses when you click it until it is gone)
