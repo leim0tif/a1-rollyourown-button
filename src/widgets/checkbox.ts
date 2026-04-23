@@ -81,6 +81,7 @@ class CheckBox extends Widget{
     }
     
     pressReleaseState(): void{
+        // Sets color based on checked state
         if (this._checked) {
             this._rect.fill("#80acff");
         } 
@@ -102,7 +103,13 @@ class CheckBox extends Widget{
     //TODO: give the states something to do! Use these methods to control the visual appearance of your
     //widget
     idleupState(): void {
-        throw new Error("Method not implemented.");
+        // Sets color based on checked state
+        if (this._checked) {
+            this._rect.fill("#80acff");
+        } 
+        else { 
+            this._rect.fill("white");
+        }
     }
     idledownState(): void {
         throw new Error("Method not implemented.");
