@@ -152,6 +152,10 @@ class RadioButton extends Widget{
         this.update();
     }
 
+    public get group_num() {
+        return this._group_num;
+    }
+
 }
 
 export {RadioButton}

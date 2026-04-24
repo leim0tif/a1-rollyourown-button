@@ -143,6 +143,10 @@ class CheckBox extends Widget{
         this.update();
     }
 
+    public get checked() {
+        return this._checked;
+    }
+
 }
 
 export {CheckBox}

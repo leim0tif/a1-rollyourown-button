@@ -46,7 +46,7 @@ class RadioGroup extends Widget{
     }
 
     select_button(button: RadioButton): void {
-        _checked_num = button.group_num;
+        this._checked_num = button.group_num;
         for (let b = 0; b<this._buttons.length; b++) {
             if (this._buttons[b] !== button) {
                 this._buttons[b].uncheck();
@@ -88,6 +88,12 @@ class RadioGroup extends Widget{
     buttonSize() {
         return this._buttons.length;
     }
+
+    public get selected_button() {
+        return this._checked_num
+    }
+
+    
 
     
 }
